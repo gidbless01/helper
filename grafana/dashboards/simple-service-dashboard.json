@@ -1,0 +1,40 @@
+{
+    "id": null,
+    "uid": "simple-service-dashboard",
+    "title": "Simple Service Dashboard",
+    "tags": [],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "5s",
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "annotations": {
+        "list": []
+    },
+    "templating": {
+        "list": []
+    },
+    "panels": [
+        {
+            "type": "graph",
+            "title": "Requests per second",
+            "id": 1,
+            "datasource": null,
+            "gridPos": {
+                "x": 0,
+                "y": 0,
+                "w": 24,
+                "h": 9
+            },
+            "targets": [
+                {
+                    "expr": "rate(http_requests_total[1m])",
+                    "legendFormat": "{{endpoint}} - {{method}}"
+                }
+            ]
+        }
+    ]
+}

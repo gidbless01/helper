@@ -1,0 +1,15 @@
+route:
+  group_by: ['alertname']
+  receiver: 'console'
+  repeat_interval: 1h
+
+receivers:
+- name: 'console'
+  webhook_configs:
+  - url: 'http://localhost:9093/'
+
+# Example Slack receiver (commented out)
+# - name: 'slack'
+#   slack_configs:
+#   - api_url: 'https://hooks.slack.com/services/TOKEN'
+#     channel: '#alerts'
